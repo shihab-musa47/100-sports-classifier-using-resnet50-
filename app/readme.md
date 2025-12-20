@@ -1,0 +1,1 @@
+use the huggingface spaces to use the sports classifier live : https://huggingface.co/spaces/ShihabMusa47/sports-image-classifier
