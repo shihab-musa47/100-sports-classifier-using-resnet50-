@@ -1,0 +1,43 @@
+---
+title: Sports Image Classifier
+layout: page
+---
+
+<input id="photo" type="file">
+<div id="results"></div>
+
+<script type="module">
+  import { Client } from "https://esm.sh/@gradio/client";
+
+  const input = document.getElementById("photo");
+  const results = document.getElementById("results");
+
+  input.addEventListener("change", async () => {
+    // Connect to your Hugging Face Space
+    const client = await Client.connect("ShihabMusa47/sports-image-classifier");
+
+    // Get the uploaded file
+    const file = input.files[0];
+
+    // Send the file to the /predict endpoint
+    const result = await client.predict("/predict", { image: file });
+
+    // result.data is a dictionary of {label: probability}
+    const probs = result.data[0];  
+
+    // Sort by probability descending
+    const sorted = Object.entries(probs)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5);
+
+    // Build HTML for top-5 predictions
+    let html = `<br/><img src="${URL.createObjectURL(file)}" width="500"/>`;
+    html += "<h3>Top 5 Predictions:</h3><ol>";
+    for (const [label, prob] of sorted) {
+      html += `<li>${label}: ${(prob * 100).toFixed(2)}%</li>`;
+    }
+    html += "</ol>";
+
+    results.innerHTML = html;
+  });
+</script>
