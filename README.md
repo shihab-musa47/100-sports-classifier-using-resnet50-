@@ -56,7 +56,7 @@ This ensures the deployed model is framework‑agnostic and can be loaded safely
 The trained model is deployed to **Hugging Face Spaces** using a Gradio app.  
 Implementation can be found in the `deployment` folder or [here](https://huggingface.co/spaces/ShihabMusa47/sports-image-classifier).  
 
-<img src="deployment/gradio_app.png" width="700" height="350">
+<img src="data/gradio_app.png" width="700" height="350">
 
 ---
 
