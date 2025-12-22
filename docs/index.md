@@ -1,6 +1,7 @@
 ---
-title: Home
-layout: page
+title: Home 
+layout: home 
+author_profile: true
 ---
 
 # 🏅 Sports Image Classifier

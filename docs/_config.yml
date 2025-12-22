@@ -1,7 +1,20 @@
-remote_theme: daviddrnes/alembic@main
-plugin:
- - jekyll-remote_theme
-title: sports classifier
-description: An image classification api that classifies 100 different types of sports.
+remote_theme: mmistakes/minimal-mistakes@4.24.0
+plugins:
+  - jekyll-remote-theme
+
+title: Sports Image Classifier
+description: An image classification API that classifies 100 different types of sports.
 author:
   name: Shihab Musa
+  email: shihab47619@gmail.com
+
+# Navigation bar
+navigation:
+  - title: "Home"
+    url: /
+  - title: "Demo"
+    url: https://huggingface.co/spaces/ShihabMusa47/sports-image-classifier
+  - title: "Docs"
+    url: /docs/
+  - title: "About"
+    url: /about/
